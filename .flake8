@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+exclude = .git, __pycache, .pycharm_helpers, */migrations/*, node_modules, bower_components, venv
+extend-ignore = E126,B003,Q001,A003,Q000,E203
