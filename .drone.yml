@@ -17,5 +17,8 @@ steps:
     commands:
       - pip install --trusted-host $PIP_INDEX_HOST --index-url $PIP_INDEX_URL --upgrade pip
       - pip install --trusted-host $PIP_INDEX_HOST --index-url $PIP_INDEX_URL --upgrade poetry
+      # poetry doesn't let you pass pip flags, this is how we sneak dependencies
+      # from the local cache server in
+      - poetry run pip install --trusted-host $PIP_INDEX_HOST --index-url $PIP_INDEX_URL .
       - poetry install
       - poetry run flake8
