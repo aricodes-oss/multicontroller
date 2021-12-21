@@ -15,6 +15,8 @@ steps:
       PIP_INDEX_URL:
         from_secret: PIP_INDEX_URL
     commands:
-      - pip config set global.index-url $PIP_INDEX_URL; pip config set global.trusted-host $PIP_INDEX_HOST; pip install --upgrade pip poetry
+      - pip config set global.index-url $PIP_INDEX_URL
+      - pip config set global.trusted-host $PIP_INDEX_HOST
+      - pip install --upgrade pip poetry
       - poetry install
       - poetry run flake8
