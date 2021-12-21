@@ -12,8 +12,15 @@ authors = [ "Aria Taylor <ari@aricodes.net>",]
 line-length = 95
 target-version = [ "py39",]
 
+[tool.poetry.scripts]
+multicontroller = 'multicontroller.cli:main'
+
 [tool.poetry.dependencies]
 python = "^3.9"
+pygame = "^2.1.0"
+pyserial = "^3.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+watchgod = "^0.7"
+black = "^21.12b0"
