@@ -1,5 +1,7 @@
 # multicontroller
 
+[![Build Status](https://drone.aricodes.net/api/badges/aricodes-oss/multicontroller/status.svg)](https://drone.aricodes.net/aricodes-oss/multicontroller)
+
 Uses [`pygame`](https://www.pygame.org/) to convert controller signals to `xinput` byte strings and send them over `uart` to a [pico microcontroller](https://www.raspberrypi.com/products/raspberry-pi-pico/) wherein they will be dispatched to a console via the [USB HID spec](https://www.partsnotincluded.com/understanding-the-xbox-360-wired-controllers-usb-data/).
 
 Basically, this exists so we can take 2 controllers in and output one.
