@@ -1,5 +1,4 @@
 from math import floor
-from typing import Optional
 
 from pygame.event import Event
 from pygame.locals import JOYBUTTONDOWN, JOYBUTTONUP, JOYHATMOTION, JOYAXISMOTION

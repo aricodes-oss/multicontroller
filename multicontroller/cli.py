@@ -14,7 +14,8 @@ clock = pygame.time.Clock()
 
 
 def main():
-    joysticks = [pygame.joystick.Joystick(i) for i in range(pygame.joystick.get_count())]
+    # Necessarily to initialize control of the joysticks
+    _ = [pygame.joystick.Joystick(i) for i in range(pygame.joystick.get_count())]
     running = True
 
     state = ControllerState()
