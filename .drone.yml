@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: Lint
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+  - name: Lint
+    image: python:latest
+    environment:
+      PIP_INDEX_HOST:
+        from_secret: PIP_INDEX_HOST
+      PIP_INDEX_URL:
+        from_secret: PIP_INDEX_URL
+    commands:
+      - pip install --trusted-host $PIP_INDEX_HOST --index-url $PIP_INDEX_URL --upgrade pip
+      - pip install --trusted-host $PIP_INDEX_HOST --index-url $PIP_INDEX_URL --upgrade poetry
+      - poetry install
+      - poetry run flake8
